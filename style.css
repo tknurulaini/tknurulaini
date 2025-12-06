@@ -62,10 +62,41 @@ body{
   position:sticky;top:18px;z-index:40;margin-bottom:20px
 }
 .nav-left{display:flex;align-items:center;gap:14px}
-.logo{
-    
-  width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),var(--accent-2));display:flex;align-items:center;justify-content:center;color:white;font-weight:800;font-size:18px;box-shadow:0 6px 18px rgba(91,141,239,0.16)
+/* LOGO FLEXIBLE: bisa teks atau gambar */
+.logo {
+  width: 56px;
+  height: 56px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 800;
+  font-size: 18px;
+  box-shadow: 0 6px 18px rgba(91,141,239,0.16);
+  position: relative;
+  overflow: hidden; /* penting agar gambar mengikuti bentuk logo */
 }
+
+/* Untuk gambar logo */
+.logo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: none; /* default: tidak tampil */
+}
+
+/* Saat pengguna ingin memakai gambar */
+.logo.use-image img {
+  display: block;
+}
+
+/* Jika gambar tampil, teks otomatis hilang */
+.logo.use-image span {
+  display: none;
+}
+
 .nav-links{
   display:flex;gap:12px
   
